@@ -53,7 +53,13 @@ export default class User{
         const {username, password} = req.body;
         //Finding the user using username. 
         const result = await userModel.findOne({username});
-        //checking if the received password is matching with the hashed pasword
+        if(!result){
+            res.json({
+                status: 'error',
+                message: 'Username or Password is wrong'
+            })
+        }
+        //checking if the received password is matching with the hashed password
         if(await bcrypt.compare(password, result.password)){
             const token = jwt.sign({
                 id: result.id,
