@@ -14,7 +14,7 @@ In this repository you will find backend apis for user registration and user log
 
     **Try using the following data to send a post request**
     *Note: In postman select body->raw->from the dropdown select JSON*
-    * {username: "AmitDeka", Password: "isHiredTrue"}
+    * {username: "AmitDeka", password: "isHiredTrue"}
 
 **Server will send an error in following cases:**
 * Username is already taken. 
